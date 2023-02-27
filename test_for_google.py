@@ -17,7 +17,7 @@ def clear_search_field():
 
 
 def test_search_results_successful(setup, clear_search_field):
-    # эта строка закрывает GDPR если он есть (нажимает Accept all)
+    # эта строка закрывает GDPR, если он есть (нажимает Accept all)
     browser.element('button+button').click()
     browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
     browser.element('[id="search"]').should(have.text('yashaka/selene: User-oriented Web UI browser tests in Python'))
